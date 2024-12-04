@@ -1,68 +1,90 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 15px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 14px; 
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 150px;
+  color: #fff;
 }
-
-h1 {
-  font-size: 20px; 
-  margin-bottom: 15px;
-  color: #333;
+.css-manager-area {
+  background-color: rgba(20, 77, 182, 0.8); 
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   text-align: center;
+  width: 250px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-
-button {
+.icon-heading {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 5px; 
+}
+.popup-button {
   background-color: #4CAF50; 
   color: white;
   border: none;
-  padding: 8px 15px; 
-  margin: 8px 4px; 
+  border-radius: 8px;
+  padding: 12px 20px;
   font-size: 14px; 
-  border-radius: 4px; 
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  width: 100%; 
 }
-
-button:hover {
-  background-color: #45a049; 
-  transform: scale(1.05); 
+.popup-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
 }
-
-button:active {
-  background-color: #388e3c; 
-  transform: scale(1); 
+.popup-button:active {
+  background-color: #388e3c;
+  transform: scale(0.98);
 }
-
 ul {
   list-style: none;
   padding: 0;
   margin-top: 15px;
-  max-height: 180px; 
+  max-height: 180px;
   overflow-y: auto;
 }
-
-li {
-  cursor: pointer;
-  margin: 6px 0; 
-  color: #007BFF;
-  text-decoration: underline;
-  transition: color 0.3s, transform 0.2s ease-in-out;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-li:hover {
-  color: #0056b3;
-  transform: translateX(4px); 
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-#css-list {
-  background-color: white;
-  padding: 8px;
-  border-radius: 6px; 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.css-manager-area {
+  animation: slideIn 0.5s ease-out;
 }
-
 button + button {
   margin-top: 12px; 
 }
