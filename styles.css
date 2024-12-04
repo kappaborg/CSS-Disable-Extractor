@@ -1,29 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 10px;
-    padding: 0;
-  }
-  
-  h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    margin: 5px 0;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    cursor: pointer;
-    margin: 5px 0;
-    color: blue;
-    text-decoration: underline;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 15px;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14px; 
+}
+
+h1 {
+  font-size: 20px; 
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+button {
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  padding: 8px 15px; 
+  margin: 8px 4px; 
+  font-size: 14px; 
+  border-radius: 4px; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #45a049; 
+  transform: scale(1.05); 
+}
+
+button:active {
+  background-color: #388e3c; 
+  transform: scale(1); 
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 180px; 
+  overflow-y: auto;
+}
+
+li {
+  cursor: pointer;
+  margin: 6px 0; 
+  color: #007BFF;
+  text-decoration: underline;
+  transition: color 0.3s, transform 0.2s ease-in-out;
+}
+
+li:hover {
+  color: #0056b3;
+  transform: translateX(4px); 
+}
+#css-list {
+  background-color: white;
+  padding: 8px;
+  border-radius: 6px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button + button {
+  margin-top: 12px; 
+}
