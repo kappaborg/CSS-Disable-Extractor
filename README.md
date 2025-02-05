@@ -10,7 +10,11 @@ This Chrome extension allows users to **enable/disable CSS styles** on any webpa
 - 🛠️ **Developer-friendly** – ideal for debugging and design tweaks.
 
 ## 📷 Screenshots
-_(Add screenshots of your extension in action here)_
+<img width="152" alt="1" src="https://github.com/user-attachments/assets/7602e511-1e2f-41c3-9a71-6c685cef0b46" /> 
+<img width="640" alt="Screenshot 2025-02-04 at 15 20 41" src="https://github.com/user-attachments/assets/c9d35ea2-eb61-4ec1-8569-e9f8cf63bd24" />
+<img width="167" alt="2" src="https://github.com/user-attachments/assets/d2bdf2dd-3b44-4978-accf-6058553543f9" />
+
+
 
 ## 🔧 Installation
 ### From Chrome Web Store
@@ -21,7 +25,7 @@ _(Add screenshots of your extension in action here)_
 ### Manual Installation (From Source Code)
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/kappasutra/YOUR-REPO-NAME.git
+   git clone https://github.com/kappaborg/CSS-Disable-Extractor.git
    ```
 2. Open **Chrome** and go to `chrome://extensions/`.
 3. Enable **Developer Mode** (top right corner).
@@ -44,8 +48,8 @@ Want to improve this extension? Feel free to contribute!
 This project is licensed under the **MIT License**. Feel free to use, modify, and distribute.
 
 ## 📬 Contact
-- GitHub: [kappasutra](https://github.com/kappasutra)
-- Email: _(Add your email if you want)_
+- GitHub: [kappaborg](https://github.com/kappasutra)
+- Email: _(trendyolexpress@proton.me)_
 
 ⭐ **Don't forget to star the repo if you find it useful!** ⭐
 
