@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Disable CSS button
+  // Disable CSS
   document.getElementById("disable-css").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, { action: "disable-css" }, (response) => {
@@ -8,42 +8,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Extract CSS button
+  // Extract CSS
   document.getElementById("extract-css").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, { action: "extract-css" }, (response) => {
-        if (response && response.cssFiles) {
-          console.log("Extracted CSS Files:", response.cssFiles);
-        } else {
+        if (!response || !response.cssFiles) {
           console.error("Failed to extract CSS.");
+          return;
         }
 
+        console.log("Extracted CSS Files:", response.cssFiles);
         const cssList = document.getElementById("css-list");
-        cssList.innerHTML = ""; // Clear previous results
+        cssList.innerHTML = ""; // Clear previous output
+
         response.cssFiles.forEach((file, index) => {
           const listItem = document.createElement("li");
+          
           if (file.type === "inline") {
             listItem.textContent = `Inline CSS #${index + 1}`;
-            listItem.addEventListener("click", () => {
-              navigator.clipboard.writeText(file.content);
-              alert("CSS copied to clipboard!");
-            });
+            listItem.dataset.content = file.content;
           } else {
             listItem.textContent = `External CSS: ${file.href}`;
-            listItem.addEventListener("click", () => {
-              chrome.downloads.download({
-                url: file.href,
-                filename: `css-file-${index + 1}.css`
-              });
-            });
+            listItem.dataset.content = file.href;
           }
+
+          listItem.addEventListener("click", () => {
+            navigator.clipboard.writeText(listItem.dataset.content);
+            showCopyMessage(listItem);
+          });
+
           cssList.appendChild(listItem);
         });
       });
     });
   });
 
-  // Enable CSS button
+  // Enable CSS
   document.getElementById("enable-css").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, { action: "enable-css" }, (response) => {
@@ -51,4 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  function showCopyMessage(element) {
+    const message = document.createElement("span");
+    message.className = "copy-message";
+    message.textContent = "Copied!";
+    element.appendChild(message);
+    message.style.display = "inline";
+
+    setTimeout(() => {
+      message.remove();
+    }, 1000);
+  }
 });

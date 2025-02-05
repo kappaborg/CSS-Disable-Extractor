@@ -1,7 +1,7 @@
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 30px;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -10,6 +10,7 @@ body {
   width: 150px;
   color: #fff;
 }
+
 .css-manager-area {
   background-color: rgba(20, 77, 182, 0.8); 
   padding: 10px;
@@ -23,7 +24,22 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  animation: slideIn 0.5s ease-out;
 }
+
+/* Fixed incorrect selector */
+.css-manager-area .extract-css {
+  width: 200px;
+  max-height: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  overflow-y: auto; /* Scrollable output */
+  font-size: 12px;
+  color: black;
+}
+
 .icon-heading {
   background-color: rgba(0, 0, 0, 0.1);
   width: 50px;
@@ -31,12 +47,14 @@ body {
   margin-bottom: 10px;
   animation: fadeIn 1s ease-out;
 }
+
 .button-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 5px; 
 }
+
 .popup-button {
   background-color: #4CAF50; 
   color: white;
@@ -49,21 +67,57 @@ body {
   transform: scale(1);
   width: 100%; 
 }
+
 .popup-button:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
+
 .popup-button:active {
   background-color: #388e3c;
   transform: scale(0.98);
 }
-ul {
+
+/* Scrollable output container */
+#css-list {
   list-style: none;
-  padding: 0;
-  margin-top: 15px;
-  max-height: 180px;
-  overflow-y: auto;
+  padding: 10px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto; /* Enables scrolling */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 12px;
+  color: white;
 }
+
+/* Style extracted CSS items */
+#css-list li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#css-list li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Copy message popup */
+.copy-message {
+  display: none;
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* Animations */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -72,6 +126,7 @@ ul {
     opacity: 1;
   }
 }
+
 @keyframes slideIn {
   0% {
     transform: translateY(50px);
@@ -82,9 +137,7 @@ ul {
     opacity: 1;
   }
 }
-.css-manager-area {
-  animation: slideIn 0.5s ease-out;
-}
+
 button + button {
   margin-top: 12px; 
 }
