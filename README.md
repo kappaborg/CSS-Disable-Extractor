@@ -17,7 +17,7 @@ This Chrome extension allows users to **enable/disable CSS styles** on any webpa
 
 ## 🔧 Installation
 ### From Chrome Web Store
-1. Go to the **Chrome Web Store** _(Add link if published)_.
+1. Go to the **Chrome Web Store** 
 2. Click **"Add to Chrome"**.
 3. Confirm by clicking **"Add extension"**.
 
