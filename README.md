@@ -12,7 +12,6 @@ This Chrome extension allows users to **enable/disable CSS styles** on any webpa
 ## 📷 Screenshots
 <img width="152" alt="1" src="https://github.com/user-attachments/assets/7602e511-1e2f-41c3-9a71-6c685cef0b46" /> 
 <img width="640" alt="Screenshot 2025-02-04 at 15 20 41" src="https://github.com/user-attachments/assets/c9d35ea2-eb61-4ec1-8569-e9f8cf63bd24" />
-<img width="167" alt="2" src="https://github.com/user-attachments/assets/d2bdf2dd-3b44-4978-accf-6058553543f9" />
 
 
 
